@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/twenty.cpp 
+../src/twenty.cpp \
+../src/twentyFunc.cpp 
 
 CPP_DEPS += \
-./src/twenty.d 
+./src/twenty.d \
+./src/twentyFunc.d 
 
 OBJS += \
-./src/twenty.o 
+./src/twenty.o \
+./src/twentyFunc.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -25,7 +28,7 @@ src/%.o: ../src/%.cpp src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/twenty.d ./src/twenty.o
+	-$(RM) ./src/twenty.d ./src/twenty.o ./src/twentyFunc.d ./src/twentyFunc.o
 
 .PHONY: clean-src
 
